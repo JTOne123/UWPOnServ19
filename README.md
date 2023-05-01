@@ -42,16 +42,16 @@ Complete the installation process. Once finished, you can access your app from t
 ![app in start menu](Images/start_menu.png)
 
 ## (Optional) Step 7: Enable Loopback Exemption for Local Setup
-If you want to run UWP app on your backend development environment and connect to the backend locally, you must enable the loopback exemption for UWP:
-a) Use the PowerShell cmdlet to obtain the PackageFamilyName of UWP app on your computer:
-```
+Suppose you want to run UWP app on your backend development environment and connect to the backend locally. In that case, you must enable the loopback exemption for UWP.
+a) Use the PowerShell cmdlet to obtain the PackageFamilyName of the UWP app on your computer:
+```powershell
 Get-AppxPackage -Name YourCompany.YourUWPAppName | ForEach-Object{ $_.PackageFamilyName }
 ```
 If you aren't sure about the company name or actual app name, you can look through a complete app list with the Get-AppxPackage command without parameters.
 ![package family name](Images/packfamilyname.png)
 
 b) Enable the exemption using the command line or the same PowerShell window; please replace YourCompany.YourUWPAppName_1111111111111 with your PackageFamilyName:
-```
+```powershell
 checknetisolation loopbackexempt -a -n="YourCompany.YourUWPAppName_1111111111111"
 ```
 
